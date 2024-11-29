@@ -114,13 +114,15 @@ class Add2CalendarPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
         if (invites != null) {
             intent.putExtra(Intent.EXTRA_EMAIL, invites)
         }
+
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
         if (intent.resolveActivity(mContext.packageManager) != null) {
             mContext.startActivity(intent)
             return true
         }
-        return false;
+
+        return false
     }
 
 
